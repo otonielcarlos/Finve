@@ -6,8 +6,8 @@ app.controller("MainCtrl", ["$scope", function ($scope) {
     $scope.interest_rate = null;
     $scope.months = null;
     $scope.pmt = null;
-    $scope.selected = '';
-    $scope.output;
+    $scope.selected = null;
+    $scope.output= null;
 
     $scope.calculate = function (rate, nper, pv) {
 
