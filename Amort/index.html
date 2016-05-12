@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="amort">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Amortize</title>
+</head>
+
+<body ng-controller="MainCtrl">
+
+    <form action="">
+        8
+        <input type="range" id="a" name="a" value="14" min="8" max="20" ng-model="interest_rate"> 18 = {{interest_rate}}
+    </form>
+    <div>
+        <input type="number" min="1000" max="60000" step="1000" value="1000" ng-model="loan_amount">
+    </div>
+
+    <button ng-click="calculate(interest_rate /100 / months, months, -loan_amount)">Calcular</button>
+
+    <input type="checkbox" ng-model="months" ng-checked="months=='6'" ng-true-value="'6'"> 6 meses
+    <input type="checkbox" ng-model="months" ng-checked="months=='12'" ng-true-value="'12'"> 12 meses
+    <input type="checkbox" ng-model="months" ng-checked="months=='24'" ng-true-value="'24'"> 24 meses
+    <input type="checkbox" ng-model="months" ng-checked="months=='36'" ng-true-value="'36'"> 36 meses
+    <input type="checkbox" ng-model="months" ng-checked="months=='48'" ng-true-value="'48'"> 48 meses
+    <input type="checkbox" ng-model="months" ng-checked="months=='60'" ng-true-value="'60'"> 60 meses
+
+    <div>{{pmt}}</div>
+    <div>
+        Inversión: {{loan_amount}}
+        <br> Rendimiento: {{output}}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
